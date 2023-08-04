@@ -25,6 +25,11 @@ if (NOT CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 11)
 endif()
 
+set(CMAKE_INSTALL_LIBDIR "awslib")
+set(BUILD_SHARED_LIBS ON)
+find_package(OpenSSL REQUIRED)
+set(OPENSSL_CRYPTO_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}../../third-party/starfish-sdk/openssl-1.1.1o/libcrypto.so")
+
 if (UNIX AND NOT APPLE)
     include(GNUInstallDirs)
 elseif(NOT DEFINED CMAKE_INSTALL_LIBDIR)

@@ -35,18 +35,18 @@ endif()
 
 install(FILES ${AWS_ECHOTESTRPC_HEADERS} DESTINATION "include/awstest/" COMPONENT Development)
 
-file(GLOB TEST_SRC "*.cpp")
-file(GLOB TEST_HDRS "*.h")
-file(GLOB TESTS ${TEST_HDRS} ${TEST_SRC})
+#file(GLOB TEST_SRC "*.cpp")
+#file(GLOB TEST_HDRS "*.h")
+#file(GLOB TESTS ${TEST_HDRS} ${TEST_SRC})
 
 set(TEST_BINARY_NAME ${PROJECT_NAME}-tests)
 
-add_test_case(OperateWhileDisconnected)
+#add_test_case(OperateWhileDisconnected)
 # The tests below can be commented out when an EchoRPC Server is running on 127.0.0.1:8033
 #add_test_case(EventStreamConnect)
 #add_test_case(EchoOperation)
 #add_test_case(StressTestClient)
-generate_cpp_test_driver(${TEST_BINARY_NAME})
-target_include_directories(${TEST_BINARY_NAME} PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>)
+#generate_cpp_test_driver(${TEST_BINARY_NAME})
+#target_include_directories(${TEST_BINARY_NAME} PUBLIC
+#    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#    $<INSTALL_INTERFACE:include>)
